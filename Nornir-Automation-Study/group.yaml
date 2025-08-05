@@ -1,0 +1,52 @@
+---
+cisco_ioxe_iol:
+  username: cisco
+  password: cisco
+  port: 22
+  connection_options:
+    netmiko:
+      platform: cisco_iosxe
+      extras:
+        allow_agent: false
+        look_for_keys: false
+        # Force legacy KEX and MACs for IOL
+        banner_timeout: 30
+        auth_timeout: 30
+        global_delay_factor: 2
+        conn_timeout: 30
+        ssh_config_file: false
+        fast_cli: false
+    scrapli_netconf:
+      extras:
+        transport: paramiko
+        ssh_config_file: false
+        ssh_known_hosts_file: false
+        auth_strict_key: false
+cisco_ioxe:
+  username: cisco
+  password: cisco
+  connection_options:
+    netmiko:
+      platform: cisco_iosxe
+      extras:
+        allow_agent: false
+        look_for_keys: false
+        # Force legacy KEX and MACs for IOL
+        banner_timeout: 30
+        auth_timeout: 30
+        global_delay_factor: 2
+        conn_timeout: 30
+        ssh_config_file: false
+        fast_cli: false
+    scrapli_netconf:
+      extras:
+        transport: paramiko
+        ssh_config_file: false
+        ssh_known_hosts_file: false
+        auth_strict_key: false
+juniper:
+  connection_options:
+    scrapli_netconf:
+      port: 830
+      extras:
+        ssh_config_file: false

@@ -1,0 +1,64 @@
+---
+
+R1:
+    hostname: 192.168.132.101
+    groups:
+        - cisco_iosxeiol
+    data:
+        ospf:
+            ospf_rid: 1.1.1.1
+            ospf_process: "1"
+            ospf_networks:
+                - ip: "12.12.12.1"
+                  wildcard: "0.0.0.0"
+                  area: "1"
+
+R2:
+    hostname: 192.168.132.102
+    groups:
+       - cisco_iosxeiol
+    data:
+        ospf:
+            ospf_rid: 2.2.2.2
+            ospf_process: "1"
+            ospf_networks:
+                - ip: "12.12.12.2"
+                  wildcard: "0.0.0.0"
+                  area: "1"
+                - ip: "23.23.23.1"
+                  wildcard: "0.0.0.0"
+                  area: "0"
+
+R3:
+    hostname: 192.168.132.103
+    groups:
+        - cisco_iosxeiol
+    data:
+        ospf:
+            ospf_rid: 3.3.3.3
+            ospf_process: "1"
+            ospf_networks:
+                - ip: "34.34.34.1"
+                  wildcard: "0.0.0.0"
+                  area: "2"
+                - ip: "23.23.23.2"
+                  wildcard: "0.0.0.0"
+                  area: "0"
+
+R4:
+    hostname: 192.168.132.104
+    groups:
+       - cisco_iosxeiol
+    data:
+        ospf:
+            ospf_rid: 4.4.4.4
+            ospf_process: "1"
+            ospf_networks:
+                - ip: "34.34.34.2"
+                  wildcard: "0.0.0.0"
+                  area: "2"
+
+CSR5:
+    hostname: 192.168.132.105
+    groups:
+        - cisco_iosxe

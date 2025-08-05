@@ -1,0 +1,2781 @@
+2025-08-02 06:55:00,649 -  nornir.core -     INFO -        run() - Running task 'run_command' with args {} on 5 hosts
+2025-08-02 06:55:03,712 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 112, in open
+    self.transport.open_netconf()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/transport/plugins/paramiko/transport.py", line 27, in open_netconf
+    super().open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/paramiko/transport.py", line 79, in open
+    self.socket.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 133, in open
+    self._connect(socket_address_families=socket_address_families)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 83, in _connect
+    self.sock.connect((self.host, self.port))
+OSError: [Errno 113] No route to host
+
+2025-08-02 06:55:03,712 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:04:03,593 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'wr mem'} on 5 hosts
+2025-08-02 07:04:03,597 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 89, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `192.168.132.101`
+
+2025-08-02 07:04:03,597 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 89, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `192.168.132.105`
+
+2025-08-02 07:04:03,597 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 89, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `192.168.132.102`
+
+2025-08-02 07:04:03,597 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 89, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `192.168.132.104`
+
+2025-08-02 07:04:03,597 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 89, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `192.168.132.103`
+
+2025-08-02 07:06:17,060 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'wr mem'} on 5 hosts
+2025-08-02 07:06:17,332 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:06:17,337 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:06:17,341 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:06:20,193 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 07:07:30,898 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'wr mem'} on 5 hosts
+2025-08-02 07:07:33,952 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 102, in open
+    self.transport.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/paramiko/transport.py", line 79, in open
+    self.socket.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 133, in open
+    self._connect(socket_address_families=socket_address_families)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 83, in _connect
+    self.sock.connect((self.host, self.port))
+OSError: [Errno 113] No route to host
+
+2025-08-02 07:07:38,586 -  nornir.core -     INFO -        run() - Running task 'run_command' with args {} on 5 hosts
+2025-08-02 07:07:38,650 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:07:38,650 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:07:38,651 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:07:38,651 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:07:38,652 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:07:38,652 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:07:38,654 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:07:38,654 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:07:41,696 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 108, in channel_authenticate_netconf
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 07:07:41,696 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:08:41,705 -  nornir.core -     INFO -        run() - Running task 'run_command' with args {} on 5 hosts
+2025-08-02 07:08:41,771 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:08:41,771 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:08:41,771 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:08:41,773 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:08:41,773 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 103, in channel_authenticate_netconf
+    buf = self.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-08-02 07:08:41,773 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:08:41,773 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:08:41,774 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:08:44,832 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/channel/sync_channel.py", line 108, in channel_authenticate_netconf
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 07:08:44,832 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:11:50,595 -  nornir.core -     INFO -        run() - Running task 'run_command' with args {} on 5 hosts
+2025-08-02 07:11:53,664 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 112, in open
+    self.transport.open_netconf()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/transport/plugins/paramiko/transport.py", line 27, in open_netconf
+    super().open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/paramiko/transport.py", line 79, in open
+    self.socket.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 133, in open
+    self._connect(socket_address_families=socket_address_families)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 83, in _connect
+    self.sock.connect((self.host, self.port))
+OSError: [Errno 113] No route to host
+
+2025-08-02 07:11:53,664 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:40:40,077 -  nornir.core -     INFO -        run() - Running task 'run_command' with args {} on 5 hosts
+2025-08-02 07:40:43,136 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/driver/sync_driver.py", line 112, in open
+    self.transport.open_netconf()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli_netconf/transport/plugins/paramiko/transport.py", line 27, in open_netconf
+    super().open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/plugins/paramiko/transport.py", line 79, in open
+    self.socket.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 133, in open
+    self._connect(socket_address_families=socket_address_families)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/transport/base/base_socket.py", line 83, in _connect
+    self.sock.connect((self.host, self.port))
+OSError: [Errno 113] No route to host
+
+2025-08-02 07:40:43,136 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'run_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook-testconnection.py", line 10, in run_command
+    result = task.run(task=netconf_get_config, source="running")
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-08-02 07:48:41,416 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'command': 'no ip domain-lookup'} on 5 hosts
+2025-08-02 07:48:41,417 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-08-02 07:48:41,417 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-08-02 07:48:41,417 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-08-02 07:48:41,417 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-08-02 07:48:41,417 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_config() got an unexpected keyword argument 'command'
+
+2025-08-02 07:48:57,042 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'no ip domain-lookup'} on 5 hosts
+2025-08-02 07:48:57,318 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:48:57,318 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:48:57,318 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:49:00,196 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 07:49:03,613 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'no ip domain-lookup'} on 5 hosts
+2025-08-02 07:49:03,883 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:49:03,885 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:49:03,885 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:49:06,752 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 07:49:59,047 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'no ip domain lookup'} on 5 hosts
+2025-08-02 07:49:59,318 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:49:59,319 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:49:59,320 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2025-08-02 07:50:02,177 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 07:52:02,704 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'no ip domain lookup'} on 5 hosts
+2025-08-02 07:52:05,825 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_config.py", line 59, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-02 08:12:06,034 -  nornir.core -     INFO -        run() - Running task 'run_command' with args {} on 5 hosts
+2025-08-02 08:12:25,721 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'no ip domain lookup'} on 5 hosts
+2025-08-02 08:27:26,508 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'wr mem'} on 5 hosts
+2025-08-03 17:11:37,676 -  nornir.core -     INFO -        run() - Running task 'test_template' with args {} on 5 hosts
+2025-08-03 17:11:37,682 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'test_template.j2' not found in search path: 'templates'
+
+2025-08-03 17:11:37,682 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'test_template.j2' not found in search path: 'templates'
+
+2025-08-03 17:11:37,682 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'test_template.j2' not found in search path: 'templates'
+
+2025-08-03 17:11:37,682 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'test_template.j2' not found in search path: 'templates'
+
+2025-08-03 17:11:37,682 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-03 17:11:37,682 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'test_template.j2' not found in search path: 'templates'
+
+2025-08-03 17:11:37,683 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-03 17:11:37,683 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-03 17:11:37,683 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-03 17:11:37,683 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-03 17:19:59,075 -  nornir.core -     INFO -        run() - Running task 'test_template' with args {} on 5 hosts
+2025-08-03 17:19:59,090 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/test_template.j2", line 1, in top-level template code
+    router ospf {{ host['ospf']['ospf_process'] }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 471, in getitem
+    return obj[argument]
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ospf'
+
+2025-08-03 17:19:59,091 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-03 17:20:48,843 -  nornir.core -     INFO -        run() - Running task 'test_template' with args {} on 5 hosts
+2025-08-03 17:20:48,859 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/test_template.j2", line 1, in top-level template code
+    router ospf {{ host['ospf']['ospf_process'] }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 471, in getitem
+    return obj[argument]
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ospf'
+
+2025-08-03 17:20:48,860 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'test_template' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook3.py", line 9, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:31:49,224 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 10:31:49,233 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'snmp.j2' not found in search path: 'cisco_iosxe-templates'
+
+2025-08-04 10:31:49,233 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'snmp.j2' not found in search path: 'cisco_iosxe-templates'
+
+2025-08-04 10:31:49,234 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'snmp.j2' not found in search path: 'cisco_iosxe-templates'
+
+2025-08-04 10:31:49,234 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'snmp.j2' not found in search path: 'cisco_iosxe-templates'
+
+2025-08-04 10:31:49,234 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'snmp.j2' not found in search path: 'cisco_iosxe-templates'
+
+2025-08-04 10:31:49,235 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:31:49,235 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:31:49,235 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:31:49,235 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:31:49,236 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "junos-templates/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp_community'
+
+2025-08-04 10:31:49,236 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:31:49,236 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:35:53,587 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 10:35:53,600 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'snmp_community'
+
+2025-08-04 10:35:53,600 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'snmp_community'
+
+2025-08-04 10:35:53,601 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'snmp_community'
+
+2025-08-04 10:35:53,601 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:35:53,601 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "junos-templates/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp_community'
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp_community'
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'snmp_community'
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:35:53,602 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:47:53,790 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 10:47:53,800 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:47:53,801 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:47:53,802 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:47:53,803 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:47:53,803 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:47:53,804 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:47:53,804 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "junos-templates/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp_community'
+
+2025-08-04 10:47:53,804 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:47:53,804 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:47:53,804 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:47:53,805 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:47:53,805 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,077 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 10:51:56,086 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:51:56,087 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:51:56,087 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:51:56,088 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:51:56,089 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'snmp' is undefined
+
+2025-08-04 10:51:56,089 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,089 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,090 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,090 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "junos-templates/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.snmp.snmp_community }}
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp_community'
+
+2025-08-04 10:51:56,090 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,090 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,091 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:51:56,091 -  nornir.core -  WARNING -        run() - Task 'test_template' has not been run – 0 hosts selected
+2025-08-04 10:53:50,816 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 10:53:50,834 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "junos-templates/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.facts.snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp'
+
+2025-08-04 10:53:50,836 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:53:50,836 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "ios-templates/snmp.j2", line 1, in top-level template code
+    snmp-server community {{ host.facts.snmp.snmp_community }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'snmp'
+
+2025-08-04 10:53:50,837 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 10:53:53,943 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 59, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-04 10:53:53,944 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 59, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-04 10:53:53,944 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 25, in test_template
+    task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-08-04 10:53:53,944 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 25, in test_template
+    task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-08-04 10:53:53,971 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 59, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-04 10:53:53,971 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook5.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook5.py", line 25, in test_template
+    task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-08-04 14:06:52,916 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 14:06:52,940 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 5, in top-level template code
+    neighbor {{ host.facts.bgp.peer_group }} peer-group
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'peer_group'
+
+2025-08-04 14:06:52,940 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:06:52,944 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 1, in top-level template code
+    router bgp {{ host.facts.bgp.asn }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'bgp'
+
+2025-08-04 14:06:52,947 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:06:52,947 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 1, in top-level template code
+    router bgp {{ host.facts.bgp.asn }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'bgp'
+
+2025-08-04 14:06:52,947 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:06:55,593 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 24, in test_template
+    task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-08-04 14:06:57,538 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 24, in test_template
+    task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-08-04 14:06:57,630 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 24, in test_template
+    task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-08-04 14:09:15,348 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 14:09:15,378 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 1, in top-level template code
+    router bgp {{ host.facts.bgp.asn }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'bgp'
+
+2025-08-04 14:09:15,379 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 1, in top-level template code
+    router bgp {{ host.facts.bgp.asn }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'bgp'
+
+2025-08-04 14:09:15,379 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 4, in top-level template code
+    neighbor {{ host.facts.bgp.peer_group }} peer-group
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'peer_group'
+
+2025-08-04 14:09:15,379 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:09:15,379 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:09:15,380 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:11:23,896 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 6 hosts
+2025-08-04 14:11:23,934 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 1, in top-level template code
+    router bgp {{ host.facts.bgp.asn }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'bgp'
+
+2025-08-04 14:11:23,938 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 1, in top-level template code
+    router bgp {{ host.facts.bgp.asn }}
+  File "/git-folder/venv/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'bgp'
+
+2025-08-04 14:11:23,938 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 14:11:23,938 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "Runbook6.py", line 14, in load_vars
+    test_template(task)
+  File "Runbook6.py", line 17, in test_template
+    template = task.run(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-08-04 16:14:40,923 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'wr mem'} on 6 hosts
+2025-08-04 16:14:44,057 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2025-08-04 16:14:44,057 - nornir.core.task -    ERROR -      start() - Host 'CSR5': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/git-folder/venv/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 297, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/git-folder/venv/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 481, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+

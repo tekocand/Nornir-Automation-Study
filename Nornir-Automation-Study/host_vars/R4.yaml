@@ -1,0 +1,17 @@
+---
+
+snmp:
+    snmp_community: "amazing"
+
+ospf:
+    ospf_rid: 4.4.4.4
+bgp:
+    asn: "65001"
+    router_id: 4.4.4.4
+    update_source: "Loopback1"
+    route_reflector: True
+    peer_groups: "PEERS"
+    neighbors:
+        - 1.1.1.1
+        - 2.2.2.2
+        - 3.3.3.3

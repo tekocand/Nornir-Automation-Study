@@ -1,0 +1,49 @@
+---
+
+R1:
+    hostname: 192.168.132.101
+    groups:
+        - cisco_iosxeiol
+    data:
+        snmp:
+            snmp_community: "amazing"
+
+R2:
+    hostname: 192.168.132.102
+    groups:
+       - cisco_iosxeiol
+    data:
+        snmp:
+            snmp_community: "amazing"
+
+R3:
+    hostname: 192.168.132.103
+    groups:
+        - cisco_iosxeiol
+    data:
+        snmp:
+            snmp_community: "amazing"
+
+R4:
+    hostname: 192.168.132.104
+    groups:
+       - cisco_iosxeiol
+    data:
+        snmp:
+            snmp_community: "amazing"
+
+CSR5:
+    hostname: 192.168.132.105
+    groups:
+        - cisco_iosxe
+    data:
+        snmp:
+            snmp_community: "amazing"
+            
+vMX1:
+    hostname: 192.168.132.106
+    groups:
+        - junos
+    data:
+        snmp:
+            snmp_community: "amazing"
