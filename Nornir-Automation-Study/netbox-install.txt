@@ -43,6 +43,7 @@ sudo docker-compose up
 ------------------------------------------------------------------------
 
 restart service :
+cd netbox-docker/
 docker-compose down && docker system prune -f && docker-compose up -d --build
 
 check cointainer :
